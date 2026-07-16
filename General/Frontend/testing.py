@@ -1,18 +1,16 @@
-import pandas as pd
-import numpy as np
+import plotly.graph_objects as go
+import plotly.io
 
-
-s = pd.Series([1, 3, 5, np.nan, 6, 8])
-
-
-print (s)
-
-
-df2 = pd.DataFrame(
-    {
-        "A": 1.0,
-        "B": pd.Timestamp("20130102"),
-        "C": pd.Series(1, index = list(range(4)), dtype="float32"),
+fig = dict({
+    "layout": {
+        "title":{"text":"Beispiel"
+                 }
+        }
+    "data": [{
+        "type":"bar",
+        "x":[1,2,3]
+        "y":[[42,1337,807]]
     }
-)
-print(df2)
+    ]
+})
+pio.show(fig)
